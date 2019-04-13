@@ -13,8 +13,8 @@
 		2B8F819A225FFA6200DA629C /* Tareas.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2B8F8198225FFA6200DA629C /* Tareas.xcdatamodeld */; };
 		2B8F819C225FFA6200DA629C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B8F819B225FFA6200DA629C /* Assets.xcassets */; };
 		2B8F819F225FFA6200DA629C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B8F819D225FFA6200DA629C /* LaunchScreen.storyboard */; };
-		2B8F81A7225FFCFC00DA629C /* Tarea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8F81A6225FFCFC00DA629C /* Tarea.swift */; };
 		2B8F81A9226009C200DA629C /* CreaTareaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8F81A8226009C200DA629C /* CreaTareaViewController.swift */; };
+		2B9FB1762260E3060005F538 /* TareaCompletadaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FB1752260E3060005F538 /* TareaCompletadaViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +26,8 @@
 		2B8F819B225FFA6200DA629C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B8F819E225FFA6200DA629C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2B8F81A0225FFA6200DA629C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2B8F81A6225FFCFC00DA629C /* Tarea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tarea.swift; sourceTree = "<group>"; };
 		2B8F81A8226009C200DA629C /* CreaTareaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreaTareaViewController.swift; sourceTree = "<group>"; };
+		2B9FB1752260E3060005F538 /* TareaCompletadaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TareaCompletadaViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +64,7 @@
 				2B8F8193225FFA6200DA629C /* ViewController.swift */,
 				2B8F81A8226009C200DA629C /* CreaTareaViewController.swift */,
 				2B8F8195225FFA6200DA629C /* Main.storyboard */,
-				2B8F81A6225FFCFC00DA629C /* Tarea.swift */,
+				2B9FB1752260E3060005F538 /* TareaCompletadaViewController.swift */,
 				2B8F819B225FFA6200DA629C /* Assets.xcassets */,
 				2B8F819D225FFA6200DA629C /* LaunchScreen.storyboard */,
 				2B8F81A0225FFA6200DA629C /* Info.plist */,
@@ -148,7 +148,7 @@
 				2B8F8194225FFA6200DA629C /* ViewController.swift in Sources */,
 				2B8F819A225FFA6200DA629C /* Tareas.xcdatamodeld in Sources */,
 				2B8F8192225FFA6200DA629C /* AppDelegate.swift in Sources */,
-				2B8F81A7225FFCFC00DA629C /* Tarea.swift in Sources */,
+				2B9FB1762260E3060005F538 /* TareaCompletadaViewController.swift in Sources */,
 				2B8F81A9226009C200DA629C /* CreaTareaViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

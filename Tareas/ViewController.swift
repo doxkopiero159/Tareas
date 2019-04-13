@@ -1,10 +1,4 @@
-//
-//  ViewController.swift
-//  Tareas
-//
-//  Created by piero  acxel on 11/04/19.
-//  Copyright © 2019 piero  acxel. All rights reserved.
-//
+
 
 import UIKit
 
@@ -12,12 +6,12 @@ class ViewController: UIViewController ,UITableViewDelegate,UITableViewDataSourc
 
     @IBOutlet weak var tableView: UITableView!
     var  tareas:[Tarea] = []
-    
+    var indexSeleccionado = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        tareas = createTareas()
+        //tareas = createTareas()
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -32,9 +26,9 @@ class ViewController: UIViewController ,UITableViewDelegate,UITableViewDataSourc
       
         if  tarea.importante{
             
-            cell.textLabel?.text="💀\(tarea.nombre)"
+            cell.textLabel?.text="💀\(tarea.nombre!)"
         }else{
-        cell.textLabel?.text = tarea.nombre
+        cell.textLabel?.text = tarea.nombre!
         
         }
         
@@ -43,23 +37,35 @@ class ViewController: UIViewController ,UITableViewDelegate,UITableViewDataSourc
         
         
     }
+    override  func  viewWillAppear(_ animated: Bool) {
+        obtenerTareas()
+        tableView.reloadData()
+    }
     
-    func createTareas() -> [Tarea] {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        indexSeleccionado = indexPath.row
+        let tarea = tareas[indexPath.row]
+        performSegue(withIdentifier: "tareaSelecionadaSegue", sender: tarea)
         
-        let tarea1 = Tarea()
-        tarea1.nombre="pasear al perro"
-        tarea1.importante = false
-        let tarea2 = Tarea()
-        tarea2.nombre="comprar  verduras"
-        tarea2.importante = true
-        let tarea3 = Tarea()
-        tarea3.nombre="lavar  los servicios"
-        tarea3.importante = false
-        
-        
-        return[tarea1,tarea2,tarea3]
         
     }
+    //func createTareas() -> [Tarea] {
+        
+       //let tarea1 = Tarea()
+        //tarea1.nombre="pasear al perro"
+        //tarea1.importante = false
+        //let tarea2 = Tarea()
+        //tarea2.nombre="comprar  verduras"
+        //tarea2.importante = true
+        //let tarea3 = Tarea()
+        //tarea3.nombre="lavar  los servicios"
+       // tarea3.importante = false
+        
+        
+        //return[tarea1,tarea2,tarea3]
+   
+  // }
     
     
     
@@ -69,9 +75,37 @@ class ViewController: UIViewController ,UITableViewDelegate,UITableViewDataSourc
         
         performSegue(withIdentifier: "agregarSegue", sender: nil)
     }
+    
+    func obtenerTareas()  {
+        let context = (UIApplication.shared.delegate as!AppDelegate).persistentContainer.viewContext
+        do{
+            tareas = try context.fetch(Tarea.fetchRequest())as![Tarea]
+        } catch{
+            print("ha ocurido un  error")
+        }
+        
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let  siguienteVC = segue .destination as! CreaTareaViewController
-        siguienteVC.anterioVC = self
+        
+        
+        
+       // if segue.identifier == "agregarSeguer" {
+            
+         //   let  siguienteVC = segue .destination as! CreaTareaViewController
+           // siguienteVC.anteriorVC = self
+            
+       // }
+        
+        if segue.identifier == "tareaSelecionadaSegue" {
+            let siguienteVC = segue.destination as! TareaCompletadaViewController
+            siguienteVC.tarea = sender as! Tarea
+            siguienteVC.anteriorVC = self
+         
+        }
+        
+        
         
     }
     
